@@ -1,0 +1,38 @@
+:root {
+    --pink: #de0051;
+    --purple: mediumslateblue;
+}
+
+/* basic styling */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Trebuchet MS", 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    line-height: 1.5;
+    font-size: 1.2rem;
+}
+
+a:any-link {
+    color: var(--pink);
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+footer {
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+strong {
+    color: var(--pink);
+}
+
+p:nth-of-type(3)>strong {
+    font-weight: normal !important;
+}

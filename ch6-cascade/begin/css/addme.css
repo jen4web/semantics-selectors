@@ -1,0 +1,37 @@
+:root {
+    --grey: #999;
+    --radius: 10px;
+    --font: Arial, Helvetica, sans-serif;
+    --purple: purple;
+}
+
+figure {
+    margin: 0;
+    border: 1px solid var(--grey);
+    border-radius: var(--radius);
+    font-family: var(--font);
+}
+
+img {
+    border-radius: var(--radius) var(--radius) 0 0;
+    max-width: 100%;
+}
+
+figcaption {
+    padding: 0.5rem;
+}
+
+a {
+    background-color: var(--purple);
+    color: white;
+    display: block;
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: var(--radius);
+    text-align: center;
+}
+
+a:hover {
+    background-color: orchid;
+    color: black;
+}

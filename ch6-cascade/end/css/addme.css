@@ -1,0 +1,71 @@
+/* The variable purple here conflicts with the variable purple in style.css. The style.css purple wins because it is unlayered. One possible solution if you want to keep this purple is to rename the variable. */
+
+:root {
+    --grey: #999;
+    --radius: 10px;
+    --font: Arial, Helvetica, sans-serif;
+    --dkpurple: purple;
+}
+
+/* Why does Arial display here and not Trebuchet? */
+figure {
+    margin: 0;
+    border: 1px solid var(--grey);
+    border-radius: var(--radius);
+    /* font-family: var(--font); */
+}
+
+img {
+    border-radius: var(--radius) var(--radius) 0 0;
+    max-width: 100%;
+}
+
+figcaption {
+    padding: 0.5rem;
+}
+
+/* Increasing specificity "doesn't work" because the cascade trumps specificity. Layers are lower priority than unlayered styles. 
+
+Three possible solutions to making the text white on the figure button -- you pick, it depends!
+
+a. Copy the figure a:any-link style out of the layered style. Any of these will work:
+- add to style.css
+- add to an embedded/internal stylesheet
+- make it inline
+
+b. Use a !important on the color: white declaration. Layer !important will override other !important styles in styles.css.
+
+c. Place the styles not in a layer into a layer... but then, what's the point of layers?
+
+HOWEVER: Layers could be use for grouping styles within your CSS. Everything is in a layer, which means there are no unlayered styles to trump anything else. It's kind of like a Sass partial file, but potentially in one document.
+
+Line 1 of your CSS -- @layer and @import must be at the top of your CSS files or embeds!
+
+@layer base, fonts, layout, gallery;
+
+@layer gallery {
+    ... gallery styles here would trump anything else for now since it's listed as the last layer above ...
+}
+@layer base {
+}
+@layer gallery {
+    ...more gallery styles would be added to the previous gallery layer and not treated separately. This could be an @import or more individual styles. ...
+}
+
+
+
+*/
+figure a:any-link {
+    background-color: var(--dkpurple);
+    color: white;
+    display: block;
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: var(--radius);
+    text-align: center;
+}
+
+figure a:hover {
+    background-color: orchid;
+    color: black;
+}

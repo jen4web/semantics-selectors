@@ -1,0 +1,50 @@
+/* VSC may throw errors for the @layer code, but it is correct -- see https: //developer.mozilla.org/en-US/docs/Web/CSS/@layer */
+
+@import 'addme.css' layer(addme);
+
+
+:root {
+    --pink: #de0051;
+    --purple: mediumslateblue;
+}
+
+/* basic styling */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Trebuchet MS", 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    line-height: 1.5;
+    font-size: 1.2rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+a:any-link {
+    color: var(--pink);
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+footer {
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+strong {
+    color: var(--pink);
+}
+
+p:nth-of-type(3)>strong {
+    font-weight: normal !important;
+}
+
+figure a:any-link {
+    color: white;
+}
